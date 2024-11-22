@@ -24,7 +24,11 @@ window.addEventListener("load", function() {
 		video.playbackRate *= 0.90;
 		console.log("New speed is " + video.playbackRate);
 	});
-
+	document.querySelector("#faster").addEventListener("click", function() {
+		console.log("Speed Up Video");
+		video.playbackRate /= 0.90;
+		console.log("New speed is " + video.playbackRate);
+	});
 	document.querySelector("#mute").addEventListener("click", function() {
 		console.log("Mute Video");
 		if (video.muted == true) {
@@ -40,12 +44,6 @@ window.addEventListener("load", function() {
 		video.volume = this.value / 100;
 		document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
 	});
-	document.querySelector("#faster").addEventListener("click", function() {
-		console.log("Speed Up Video");
-		video.playbackRate /= 0.90;
-		console.log("New speed is " + video.playbackRate);
-	});
-
 	document.querySelector("#skip").addEventListener("click", function() {
 		console.log("Skip Ahead");
 		if (video.currentTime + 15 > video.duration) {
@@ -55,9 +53,12 @@ window.addEventListener("load", function() {
 		}
 		console.log("New time is " + video.currentTime);
 	});
+	document.querySelector("#vintage").addEventListener("click", function() {
+		console.log("Changing CSS");
+		video.classList.add("oldSchool");
+	});
+	document.querySelector("#orig").addEventListener("click", function() {
+		console.log("Changing CSS");
+		video.classList.remove("oldSchool");
+	});
 });
-
-// document.querySelector("#play").addEventListener("click", function() {
-// 	console.log("Play Video");
-// });
-
