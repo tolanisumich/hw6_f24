@@ -8,13 +8,13 @@ window.addEventListener("load", function() {
 	console.log("this works");
 
 	document.querySelector("#play").addEventListener("click", function() {
-		console.log("Play Video");
+		console.log("Video is Playing");
 		document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
 		video.play();
 	});
 
 	document.querySelector("#pause").addEventListener("click", function() {
-		console.log("Pause Video");
+		console.log("Video Paused");
 		document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
 		video.pause();
 	});
